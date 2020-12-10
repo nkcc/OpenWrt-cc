@@ -11,9 +11,20 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.1.100/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/172.30.1.2/g' package/base-files/files/bin/config_generate
 
 
 # 添加argon主题
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git  package/lean/luci-theme-argon
+
+
+# dockerman添加
+git clone https://github.com/lisaac/luci-app-dockerman package/lean/luci-app-dockerman
+
+
+# hello world依赖
+git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb
+
+# hello world
+git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr
